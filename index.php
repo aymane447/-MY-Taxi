@@ -194,7 +194,7 @@ $headerNotice = $settings['header_notice'] ?? 'Disponible 24/7 à Aigle, Station
                         <div class="trust-divider"></div>
 
                         <div class="trust-metric-box">
-                            <span class="metric-big-num">5</span>
+                            <span class="metric-big-num">4</span>
                             <span class="metric-caption" data-i18n="trust_langs">parlées par nos chauffeurs</span>
                         </div>
                     </div>
@@ -543,7 +543,7 @@ $headerNotice = $settings['header_notice'] ?? 'Disponible 24/7 à Aigle, Station
                         <span class="about-stat-label" data-i18n="about_stat_2">disponibles jour et nuit</span>
                     </div>
                     <div class="about-stat-box">
-                        <span class="about-stat-num">5</span>
+                        <span class="about-stat-num">4</span>
                         <span class="about-stat-label" data-i18n="about_stat_3">langues parlées</span>
                     </div>
                     <div class="about-stat-box">

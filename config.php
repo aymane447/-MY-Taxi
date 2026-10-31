@@ -34,9 +34,9 @@ define('COMPANY_ADDRESS', 'Avenue des Alpes 28, 1860 Aigle');
 define('SITE_TAGLINE', 'Taxi à Aigle & Région · 24/7');
 define('PHONE_NUMBER', '+41 79 266 61 21');
 define('PHONE_CLEAN', '+41792666121');
-define('PHONE_DISPLAY', '079 266 61 21');
+define('PHONE_DISPLAY', '+41 79 266 61 21');
 define('WHATSAPP_NUMBER', '41792666121');
-define('CONTACT_EMAIL', 'contact@mytaxi-aigle.ch');
+define('CONTACT_EMAIL', 'hichem_khemila@hotmail.com');
 define('DEFAULT_CURRENCY', 'CHF');
 
 // ─── Configuration SMTP (Gmail App Password) ────────────────────────────
