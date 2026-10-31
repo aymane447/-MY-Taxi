@@ -8,8 +8,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-# Installer les extensions PHP (pdo_sqlite, sqlite3, pdo_mysql si besoin)
-RUN docker-php-ext-install pdo pdo_sqlite pdo_mysql
+# Installer les extensions PHP (pdo_sqlite, sqlite3, pdo_pgsql, pgsql, pdo_mysql si besoin)
+RUN apt-get update && apt-get install -y --no-install-recommends libpq-dev && rm -rf /var/lib/apt/lists/*
+RUN docker-php-ext-install pdo pdo_sqlite pdo_pgsql pgsql pdo_mysql
 
 # Activer le module Apache mod_rewrite
 RUN a2enmod rewrite

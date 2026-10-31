@@ -8,8 +8,16 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-// Configuration Base de Données
-define('DB_TYPE', 'sqlite'); // 'sqlite' ou 'mysql'
+// Configuration Base de Données : 'supabase' (ou 'pgsql'), 'sqlite', 'mysql'
+define('DB_TYPE', 'supabase'); 
+
+// Paramètres Supabase (PostgreSQL 17 Pooler)
+define('SUPABASE_HOST', 'aws-1-eu-west-3.pooler.supabase.com');
+define('SUPABASE_PORT', '6543');
+define('SUPABASE_DB',   'postgres');
+define('SUPABASE_USER', 'postgres.xihmurjnwpxnskglwhuw');
+define('SUPABASE_PASS', 'aymane123@@');
+
 define('SQLITE_FILE', __DIR__ . '/database/mytaxi.sqlite');
 
 // Paramètres MySQL (si DB_TYPE = 'mysql')
@@ -53,7 +61,13 @@ function getDb() {
     }
 
     try {
-        if (DB_TYPE === 'sqlite') {
+        if (DB_TYPE === 'supabase' || DB_TYPE === 'pgsql') {
+            $dsn = 'pgsql:host=' . SUPABASE_HOST . ';port=' . SUPABASE_PORT . ';dbname=' . SUPABASE_DB . ';sslmode=require';
+            $pdo = new PDO($dsn, SUPABASE_USER, SUPABASE_PASS, [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+            ]);
+        } elseif (DB_TYPE === 'sqlite') {
             $dir = dirname(SQLITE_FILE);
             if (!is_dir($dir)) {
                 mkdir($dir, 0777, true);
@@ -70,7 +84,9 @@ function getDb() {
             ]);
         }
 
-        initDatabase($pdo);
+        if (DB_TYPE === 'sqlite') {
+            initDatabase($pdo);
+        }
         return $pdo;
     } catch (PDOException $e) {
         die('Erreur de connexion à la base de données : ' . htmlspecialchars($e->getMessage()));
