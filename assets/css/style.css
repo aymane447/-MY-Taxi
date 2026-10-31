@@ -183,6 +183,11 @@ header.site-header {
 }
 
 /* Sélecteur de langue discret (FR / EN / RU) - Style identique à la référence */
+/* Masquer le sélecteur mobile sur grand écran (PC / Tablette) */
+.mobile-lang-item {
+    display: none !important;
+}
+
 .header-lang-picker {
     display: inline-flex;
     align-items: center;
@@ -2053,6 +2058,7 @@ footer.site-footer {
     }
     /* Sélecteur de langue dans le menu mobile */
     .mobile-lang-item {
+        display: block !important;
         padding-bottom: 12px;
         margin-bottom: 8px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);

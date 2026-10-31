@@ -77,6 +77,49 @@ function initBookingForm() {
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
+        const nameInput = document.getElementById('customerName');
+        const phoneInput = document.getElementById('customerPhone');
+        const emailInput = document.getElementById('customerEmail');
+
+        const nameVal = nameInput ? nameInput.value.trim() : '';
+        const phoneVal = phoneInput ? phoneInput.value.trim() : '';
+        const emailVal = emailInput ? emailInput.value.trim() : '';
+
+        // 1. Validation du Nom (pas de @, pas que des chiffres, au moins 2 lettres)
+        if (nameVal.includes('@')) {
+            alert('Le champ Nom ne doit pas contenir une adresse email. Veuillez saisir votre nom et prénom.');
+            if (nameInput) nameInput.focus();
+            return;
+        }
+        if (/^[0-9+\s\-()\/.]+$/.test(nameVal) || !/[a-zA-Z\u00C0-\u017F\u0400-\u04FF]/.test(nameVal)) {
+            alert('Veuillez renseigner un nom valide avec des lettres (et non uniquement des chiffres ou des symboles).');
+            if (nameInput) nameInput.focus();
+            return;
+        }
+        if (nameVal.length < 2) {
+            alert('Le nom est trop court (au minimum 2 caractères).');
+            if (nameInput) nameInput.focus();
+            return;
+        }
+
+        // 2. Validation du Téléphone (au moins 6 chiffres)
+        const digits = phoneVal.replace(/[^0-9]/g, '');
+        if (digits.length < 6) {
+            alert('Veuillez saisir un numéro de téléphone valide (ex: +41 79 123 45 67).');
+            if (phoneInput) phoneInput.focus();
+            return;
+        }
+
+        // 3. Validation de l\'Email (doit avoir un nom, @, un domaine et une extension réelle .com, .ch, .fr, etc.)
+        if (emailVal.length > 0) {
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailRegex.test(emailVal)) {
+                alert('Veuillez saisir une adresse email complète et valide (ex: exemple@domaine.com).');
+                if (emailInput) emailInput.focus();
+                return;
+            }
+        }
+
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalText = submitBtn.innerHTML;
         submitBtn.disabled = true;

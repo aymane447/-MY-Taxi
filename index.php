@@ -257,9 +257,8 @@ $headerNotice = $settings['header_notice'] ?? 'Disponible 24/7 à Aigle, Station
                                     <div class="form-group">
                                         <label for="vehicleSelect" data-i18n="book_vehicle_label">Catégorie de véhicule</label>
                                         <select id="vehicleSelect" name="vehicle" class="form-select">
-                                            <option value="sedan">Berline Mercedes Classe E · 1 à 4 pers.</option>
-                                            <option value="van">Van Mercedes Classe V · Jusqu'à 7 pers.</option>
-                                            <option value="minibus">Minibus VIP · Jusqu'à 16 pers.</option>
+                                            <option value="van" data-i18n="opt_vehicle_van">Mercedes-Benz Classe V · Jusqu'à 7 pers.</option>
+                                            <option value="sedan" data-i18n="opt_vehicle_sedan">Mercedes-Benz Classe E · 1 à 4 pers.</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
@@ -289,18 +288,18 @@ $headerNotice = $settings['header_notice'] ?? 'Disponible 24/7 à Aigle, Station
                                 <div class="form-row-2">
                                     <div class="form-group">
                                         <label for="customerName" data-i18n="book_name_label">Votre Nom complet *</label>
-                                        <input type="text" id="customerName" name="name" class="form-input" placeholder="Ex: Jean Martin" data-i18n-ph="book_name_ph" required>
+                                        <input type="text" id="customerName" name="name" class="form-input" placeholder="Ex: Jean Martin" data-i18n-ph="book_name_ph" required minlength="2" maxlength="100" autocomplete="name">
                                     </div>
                                     <div class="form-group">
                                         <label for="customerPhone" data-i18n="book_phone_label">Numéro de téléphone *</label>
-                                        <input type="tel" id="customerPhone" name="phone" class="form-input" placeholder="+41 79 123 45 67" data-i18n-ph="book_phone_ph" required>
+                                        <input type="tel" id="customerPhone" name="phone" class="form-input" placeholder="+41 79 123 45 67" data-i18n-ph="book_phone_ph" required minlength="6" autocomplete="tel">
                                     </div>
                                 </div>
 
                                 <div class="form-row-2">
                                     <div class="form-group">
                                         <label for="customerEmail" data-i18n="book_email_label">Adresse email (pour la confirmation)</label>
-                                        <input type="email" id="customerEmail" name="email" class="form-input" placeholder="votre.email@exemple.com" data-i18n-ph="book_email_ph">
+                                        <input type="email" id="customerEmail" name="email" class="form-input" placeholder="votre.email@exemple.com" data-i18n-ph="book_email_ph" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" autocomplete="email">
                                     </div>
                                     <div class="form-group">
                                         <label for="rideNotes" data-i18n="book_notes_label">N° de vol / Remarques (optionnel)</label>
@@ -745,25 +744,23 @@ $headerNotice = $settings['header_notice'] ?? 'Disponible 24/7 à Aigle, Station
                 <!-- Onglets Flotte -->
                 <div class="fleet-tabs">
                     <button type="button" class="fleet-tab-btn active" data-panel="panel-van" data-i18n="fleet_tab_1">
-                        01 · Van Mercedes Classe V
+                        01 · Mercedes-Benz Classe V
                     </button>
                     <button type="button" class="fleet-tab-btn" data-panel="panel-sedan" data-i18n="fleet_tab_2">
-                        02 · Berline & Break Classe E
+                        02 · Mercedes-Benz Classe E
                     </button>
-                    <button type="button" class="fleet-tab-btn" data-panel="panel-minibus" data-i18n="fleet_tab_3">
-                        03 · Minibus VIP Groupe
-                    </button>
+                   
                 </div>
 
                 <!-- Panneau 1 : Van Mercedes -->
                 <div class="fleet-panel active" id="panel-van">
-                    <div class="fleet-panel-visual" data-lightbox-photo="assets/vehicule-01.webp" data-lightbox-caption="Van Mercedes-Benz Classe V">
-                        <img src="assets/vehicule-01.webp" alt="Van Mercedes-Benz Classe V noir" loading="lazy">
+                    <div class="fleet-panel-visual" data-lightbox-photo="assets/mercedes-v-class.jpg" data-lightbox-caption="Van Mercedes-Benz Classe V">
+                        <img src="assets/mercedes-v-class.jpg" alt="Van Mercedes-Benz Classe V noir" loading="lazy">
                         <span class="fleet-zoom-badge">⌕ Agrandir la photo</span>
                     </div>
                     <div class="fleet-panel-copy">
                         <span class="fleet-panel-cat">N°OTRE SÉLECTION° / 01</span>
-                        <h3>Van Mercedes Classe V</h3>
+                        <h3>Mercedes-Benz Classe V</h3>
                         <div class="fleet-panel-heading">Voyager ensemble, en toute simplicité.</div>
                         <p>Idéal pour les familles, les transferts avec skis et valises volumineuses ou les petits groupes jusqu'à 7 passagers.</p>
                         <div class="fleet-tags">
@@ -777,13 +774,13 @@ $headerNotice = $settings['header_notice'] ?? 'Disponible 24/7 à Aigle, Station
 
                 <!-- Panneau 2 : Berline Mercedes -->
                 <div class="fleet-panel" id="panel-sedan">
-                    <div class="fleet-panel-visual" data-lightbox-photo="assets/vehicule-02.webp" data-lightbox-caption="Berline Mercedes Classe E">
-                        <img src="assets/vehicule-02.webp" alt="Berline Mercedes break" loading="lazy">
+                    <div class="fleet-panel-visual" data-lightbox-photo="assets/mercedes-e-class.jpg" data-lightbox-caption="Mercedes-Benz Classe E">
+                        <img src="assets/mercedes-e-class.jpg" alt="Mercedes-Benz Classe E noire" loading="lazy">
                         <span class="fleet-zoom-badge">⌕ Agrandir la photo</span>
                     </div>
                     <div class="fleet-panel-copy">
                         <span class="fleet-panel-cat">N°OTRE SÉLECTION° / 02</span>
-                        <h3>Berline Classe E</h3>
+                        <h3>Mercedes-Benz Classe E</h3>
                         <div class="fleet-panel-heading">Votre destination, à votre rythme.</div>
                         <p>Pour vos rendez-vous d'affaires, déplacements discrets ou trajets rapides de 1 à 4 personnes dans un confort absolu.</p>
                         <div class="fleet-tags">
@@ -795,53 +792,36 @@ $headerNotice = $settings['header_notice'] ?? 'Disponible 24/7 à Aigle, Station
                     </div>
                 </div>
 
-                <!-- Panneau 3 : Minibus -->
-                <div class="fleet-panel" id="panel-minibus">
-                    <div class="fleet-panel-visual" data-lightbox-photo="assets/vehicule-03.webp" data-lightbox-caption="Minibus VIP pour groupes">
-                        <img src="assets/vehicule-03.webp" alt="Minibus pour groupes" loading="lazy">
-                        <span class="fleet-zoom-badge">⌕ Agrandir la photo</span>
-                    </div>
-                    <div class="fleet-panel-copy">
-                        <span class="fleet-panel-cat">N°OTRE SÉLECTION° / 03</span>
-                        <h3>Minibus VIP</h3>
-                        <div class="fleet-panel-heading">Partagez la route en grand comité.</div>
-                        <p>Sortie entre amis, séminaire d'entreprise, mariage ou voyage de groupe jusqu'à 16 personnes avec remorque bagages.</p>
-                        <div class="fleet-tags">
-                            <span class="fleet-tag">Voyages en groupe</span>
-                            <span class="fleet-tag">Événements & Mariages</span>
-                            <span class="fleet-tag">Capacité jusqu'à 16 places</span>
-                        </div>
-                        <a href="#reserver" class="btn btn-primary">Réserver ce véhicule <span>↗</span></a>
-                    </div>
-                </div>
+                
 
                 <!-- Galerie Photo complète des 10 véhicules -->
                 <div class="gallery-toggle-bar">
                     <h3 style="font-size: 18px; margin-bottom: 6px;">Galerie Complète de la Flotte</h3>
                     <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">Cliquez sur une image pour la visualiser en grand format :</p>
                     <div class="fleet-gallery-grid">
-                        <div class="gallery-thumb" data-lightbox-photo="assets/vehicule-04.webp" data-lightbox-caption="Minibus vue de profil">
-                            <img src="assets/vehicule-04.webp" alt="Minibus" loading="lazy">
+                        <div class="gallery-thumb" data-lightbox-photo="assets/mercedes-v-class.jpg" data-lightbox-caption="Mercedes-Benz Classe V vue panoramique sur les Alpes">
+                            <img src="assets/mercedes-v-class.jpg" alt="Mercedes-Benz Classe V" loading="lazy">
                         </div>
-                        <div class="gallery-thumb" data-lightbox-photo="assets/vehicule-05.webp" data-lightbox-caption="Flotte en stationnement en ville">
-                            <img src="assets/vehicule-05.webp" alt="Véhicule en ville" loading="lazy">
+                        <div class="gallery-thumb" data-lightbox-photo="assets/mercedes-e-class.jpg" data-lightbox-caption="Mercedes-Benz Classe E Break">
+                            <img src="assets/mercedes-e-class.jpg" alt="Mercedes-Benz Classe E" loading="lazy">
                         </div>
-                        <div class="gallery-thumb" data-lightbox-photo="assets/vehicule-06.webp" data-lightbox-caption="En route sur les sommets enneigés">
-                            <img src="assets/vehicule-06.webp" alt="Véhicule sous la neige" loading="lazy">
+                        <div class="gallery-thumb" data-lightbox-photo="assets/gallery-01.jpg" data-lightbox-caption="Mercedes-Benz Classe V Taxi officiel">
+                            <img src="assets/gallery-01.jpg" alt="Mercedes-Benz Classe V Taxi" loading="lazy">
                         </div>
-                        <div class="gallery-thumb" data-lightbox-photo="assets/vehicule-07.webp" data-lightbox-caption="Au pied des Alpes suisses">
-                            <img src="assets/vehicule-07.webp" alt="Mercedes au pied des montagnes" loading="lazy">
+                        <div class="gallery-thumb" data-lightbox-photo="assets/gallery-02.jpg" data-lightbox-caption="Intérieur cuir VIP et espace passagers">
+                            <img src="assets/gallery-02.jpg" alt="Intérieur cuir VIP Classe V" loading="lazy">
                         </div>
-                        <div class="gallery-thumb" data-lightbox-photo="assets/vehicule-08.webp" data-lightbox-caption="Arrivée devant l'hôtel">
-                            <img src="assets/vehicule-08.webp" alt="Arrivée devant le chalet" loading="lazy">
+                        <div class="gallery-thumb" data-lightbox-photo="assets/gallery-03.jpg" data-lightbox-caption="Service VIP devant le Palace">
+                            <img src="assets/gallery-03.jpg" alt="Mercedes devant le Palace" loading="lazy">
                         </div>
-                        <div class="gallery-thumb" data-lightbox-photo="assets/vehicule-09.webp" data-lightbox-caption="Liaisons sur les cols alpins">
-                            <img src="assets/vehicule-09.webp" alt="Route des cols" loading="lazy">
+                        <div class="gallery-thumb" data-lightbox-photo="assets/gallery-04.jpg" data-lightbox-caption="Nos véhicules en station d'hiver sur route enneigée">
+                            <img src="assets/gallery-04.jpg" alt="Flotte de nuit sous la neige" loading="lazy">
                         </div>
-                        <div class="gallery-thumb" data-lightbox-photo="assets/vehicule-10.webp" data-lightbox-caption="Coffre spacieux pour vos bagages et skis">
-                            <img src="assets/vehicule-10.webp" alt="Espace bagages" loading="lazy">
+                        <div class="gallery-thumb" data-lightbox-photo="assets/gallery-05.jpg" data-lightbox-caption="Arrivée au Villars Palace">
+                            <img src="assets/gallery-05.jpg" alt="Mercedes Classe E au Villars Palace" loading="lazy">
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </section>

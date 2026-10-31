@@ -133,9 +133,8 @@ function sendBookingNotification(array $booking): bool {
     if (!SMTP_ENABLED) return false;
 
     $vehicleLabels = [
-        'sedan'   => 'Berline Mercedes Classe E (1-4 pers.)',
-        'van'     => 'Van Mercedes Classe V (Jusqu\'à 7 pers.)',
-        'minibus' => 'Minibus VIP (Jusqu\'à 16 pers.)',
+        'sedan'   => 'Mercedes-Benz Classe E (1 à 4 pers.)',
+        'van'     => 'Mercedes-Benz Classe V (Jusqu\'à 7 pers.)',
     ];
     $vehicleLabel = $vehicleLabels[$booking['vehicle']] ?? $booking['vehicle'];
     $formattedDate = date('d.m.Y', strtotime($booking['date']));

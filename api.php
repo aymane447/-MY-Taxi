@@ -47,6 +47,56 @@ if ($action === 'book') {
         exit;
     }
 
+    // Validation stricte du Nom (ne doit pas être un email ni un numéro de téléphone)
+    if (strpos($name, '@') !== false) {
+        http_response_code(400);
+        echo json_encode([
+            'success' => false,
+            'message' => 'Le champ Nom ne doit pas être une adresse email. Veuillez saisir votre prénom et nom.'
+        ]);
+        exit;
+    }
+    if (preg_match('/^[0-9+\s\-()\/.]+$/', $name) || !preg_match('/[a-zA-Z\x{00C0}-\x{017F}\x{0400}-\x{04FF}]/u', $name)) {
+        http_response_code(400);
+        echo json_encode([
+            'success' => false,
+            'message' => 'Veuillez renseigner un nom valide contenant des lettres (et non uniquement des chiffres).'
+        ]);
+        exit;
+    }
+    if (mb_strlen($name) < 2) {
+        http_response_code(400);
+        echo json_encode([
+            'success' => false,
+            'message' => 'Le nom saisi est trop court (au minimum 2 caractères).'
+        ]);
+        exit;
+    }
+
+    // Validation du Téléphone (au moins 6 chiffres)
+    $digitsOnly = preg_replace('/[^0-9]/', '', $phone);
+    if (strlen($digitsOnly) < 6) {
+        http_response_code(400);
+        echo json_encode([
+            'success' => false,
+            'message' => 'Veuillez indiquer un numéro de téléphone valide (ex: +41 79 123 45 67).'
+        ]);
+        exit;
+    }
+
+    // Validation stricte de l'adresse Email si renseignée (doit comporter un @ et un domaine avec extension réelle ex: .com, .ch, .fr)
+    if (!empty($email)) {
+        $emailRegex = '/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/';
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL) || !preg_match($emailRegex, $email)) {
+            http_response_code(400);
+            echo json_encode([
+                'success' => false,
+                'message' => 'L\'adresse email saisie est invalide. Veuillez saisir une adresse complète (ex: nom@domaine.com).'
+            ]);
+            exit;
+        }
+    }
+
     try {
         $pdo = getDb();
         $refCode = generateRefCode();
