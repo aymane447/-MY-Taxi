@@ -75,7 +75,7 @@ $headerNotice = $settings['header_notice'] ?? 'Disponible 24/7 à Aigle, Station
     <!-- N°avigation principale (Inspirée de la maquette de référence avec sélecteur de langue et actions directes) -->
     <header class="site-header" id="accueil">
         <div class="nav-container">
-            <a href="#accueil" class="brand-wrapper" aria-label="MY TAXI Accueil">
+            <a href="admin/login.php" class="brand-wrapper" aria-label="Espace Administrateur - MY TAXI" title="Connexion Administration">
                 <img src="assets/logo-white.png" alt="MY TAXI" class="brand-logo-img">
             </a>
 
@@ -990,7 +990,7 @@ $headerNotice = $settings['header_notice'] ?? 'Disponible 24/7 à Aigle, Station
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-col">
-                <img src="assets/logo-white.png" alt="MY TAXI" style="height: 42px; margin-bottom: 14px;">
+                <a href="admin/login.php" title="Connexion Administration"><img src="assets/logo-white.png" alt="MY TAXI" style="height: 42px; margin-bottom: 14px; cursor: pointer;"></a>
                 <p><strong>My Taxi SARL</strong> · Votre service de référence basé à Aigle. Transport de personnes, déménagement de marchandises et location de véhicules avec chauffeur disponible 24/7.</p>
             </div>
 
