@@ -81,6 +81,13 @@ $headerNotice = $settings['header_notice'] ?? 'Disponible 24/7 à Aigle, Station
 
             <nav>
                 <ul class="nav-menu">
+                    <li class="mobile-lang-item">
+                        <div class="mobile-lang-picker" aria-label="Langue">
+                            <button type="button" class="lang-choice active" data-lang="FR">FR</button>
+                            <button type="button" class="lang-choice" data-lang="EN">EN</button>
+                            <button type="button" class="lang-choice" data-lang="RU">RU</button>
+                        </div>
+                    </li>
                     <li><a href="#qui-sommes-nous" data-i18n="nav_about">Qui sommes-nous</a></li>
                     <li><a href="#services" data-i18n="nav_services">Services</a></li>
                     <li><a href="#villes" data-i18n="nav_destinations">Destinations</a></li>

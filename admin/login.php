@@ -201,9 +201,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <button type="submit" class="btn-login">Se connecter au tableau de bord ↗</button>
             </form>
 
-            <div class="login-hint">
-                Compte par défaut : <strong>admin</strong> / <strong>taxi2026</strong>
-            </div>
+           
 
             <a href="../" class="back-site">← Retour au site public MY TAXI</a>
         </div>
