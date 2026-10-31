@@ -1,0 +1,7 @@
+.git
+.gitignore
+.dockerignore
+*.log
+*.tmp
+vendor/
+generate_css.py

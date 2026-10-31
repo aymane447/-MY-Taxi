@@ -1,0 +1,8 @@
+# Dépendances Composer
+vendor/
+
+# Fichiers de log & temporaires
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
