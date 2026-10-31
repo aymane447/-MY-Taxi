@@ -820,6 +820,9 @@ $headerNotice = $settings['header_notice'] ?? 'Disponible 24/7 à Aigle, Station
                         <div class="gallery-thumb" data-lightbox-photo="assets/gallery-05.jpg" data-lightbox-caption="Arrivée au Villars Palace">
                             <img src="assets/gallery-05.jpg" alt="Mercedes Classe E au Villars Palace" loading="lazy">
                         </div>
+                        <div class="gallery-thumb" data-lightbox-photo="assets/wifi.jpeg" data-lightbox-caption="Wifi Gratuit">
+                            <img src="assets/wifi.jpeg" loading="lazy" alt="Wifi Gratuit">
+                        </div>
                     </div>
                 </div>
                 </div>
