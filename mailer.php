@@ -31,6 +31,7 @@ function createMailer(): PHPMailer {
 
     // Expéditeur
     $mail->setFrom(SMTP_FROM_EMAIL, SMTP_FROM_NAME);
+    $mail->addReplyTo(SMTP_FROM_EMAIL, SMTP_FROM_NAME);
 
     // Attacher le logo officiel en image intégrée (CID)
     $logoPath = __DIR__ . '/assets/logo-white.png';

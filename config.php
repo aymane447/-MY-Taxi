@@ -36,7 +36,7 @@ define('PHONE_NUMBER', '+41 79 266 61 21');
 define('PHONE_CLEAN', '+41792666121');
 define('PHONE_DISPLAY', '+41 79 266 61 21');
 define('WHATSAPP_NUMBER', '41792666121');
-define('CONTACT_EMAIL', 'hichem_khemila@hotmail.com');
+define('CONTACT_EMAIL', 'my-taxiAigle@hotmail.com');
 define('DEFAULT_CURRENCY', 'CHF');
 
 // ─── Configuration SMTP (Gmail App Password) ────────────────────────────
@@ -45,11 +45,11 @@ define('SMTP_ENABLED',   true);                          // Activer/Désactiver 
 define('SMTP_HOST',      'smtp.gmail.com');               // Serveur SMTP
 define('SMTP_PORT',      587);                            // Port TLS
 define('SMTP_SECURE',    'tls');                          // 'tls' ou 'ssl'
-define('SMTP_USERNAME',  'aymanedoublani2004@gmail.com');         // Votre adresse Gmail
+define('SMTP_USERNAME',  'aymanedoublani2004@gmail.com');         // Votre adresse Gmail (relais SMTP)
 define('SMTP_PASSWORD',  'fwwx tgsk fhij nvnf');           // Mot de passe d'application 16 caractères
-define('SMTP_FROM_EMAIL', 'aymanedoublani2004@gmail.com');        // Adresse expéditeur
+define('SMTP_FROM_EMAIL', 'my-taxiAigle@hotmail.com');        // Adresse expéditeur affichée
 define('SMTP_FROM_NAME',  'MY TAXI · Aigle');              // Nom affiché
-define('SMTP_NOTIFY_TO',  'aymanedoublani2004@gmail.com');         // Email qui reçoit les notifications de réservation
+define('SMTP_NOTIFY_TO',  'my-taxiAigle@hotmail.com');         // Email qui reçoit les notifications de réservation
 
 /**
  * Obtenir la connexion PDO
