@@ -181,7 +181,7 @@ $headerNotice = $settings['header_notice'] ?? 'Disponible 24/7 à Aigle, Station
                                 <span class="metric-big-num">5,0</span>
                                 <span class="metric-stars">★★★★★</span>
                             </div>
-                            <span class="metric-caption" data-i18n="trust_reviews">88 avis Google</span>
+                            <span class="metric-caption" data-i18n="trust_reviews">1 avis Google</span>
                         </div>
 
                         <div class="trust-divider"></div>
@@ -535,7 +535,7 @@ $headerNotice = $settings['header_notice'] ?? 'Disponible 24/7 à Aigle, Station
                 <!-- Ligne des 4 Statistiques Clés (Identique à la maquette) -->
                 <div class="about-stats-strip">
                     <div class="about-stat-box">
-                        <span class="about-stat-num">88</span>
+                        <span class="about-stat-num">1</span>
                         <span class="about-stat-label" data-i18n="about_stat_1">avis Google à 5 étoiles</span>
                     </div>
                     <div class="about-stat-box">
