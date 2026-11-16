@@ -8,10 +8,17 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-// Configuration Base de Données : 'supabase' (ou 'pgsql'), 'sqlite', 'mysql'
-define('DB_TYPE', 'supabase'); 
+// Configuration Base de Données : 'mysql', 'supabase', 'sqlite'
+define('DB_TYPE', 'mysql'); 
 
-// Paramètres Supabase (PostgreSQL 17 Pooler)
+// Paramètres Hostpoint (MariaDB 10.11 / MySQL)
+define('MYSQL_HOST', 'ikipebid.mysql.db.internal');
+define('MYSQL_PORT', '3306');
+define('MYSQL_NAME', 'mytaxi0ch9db');
+define('MYSQL_USER', 'mytaxi');
+define('MYSQL_PASS', 'aymane123@@Ass');
+
+// Paramètres Supabase (conservés en secours si besoin)
 define('SUPABASE_HOST', 'aws-1-eu-west-3.pooler.supabase.com');
 define('SUPABASE_PORT', '6543');
 define('SUPABASE_DB',   'postgres');
@@ -19,13 +26,6 @@ define('SUPABASE_USER', 'postgres.xihmurjnwpxnskglwhuw');
 define('SUPABASE_PASS', 'aymane123@@');
 
 define('SQLITE_FILE', __DIR__ . '/database/mytaxi.sqlite');
-
-// Paramètres MySQL (si DB_TYPE = 'mysql')
-define('MYSQL_HOST', 'localhost');
-define('MYSQL_PORT', '3306');
-define('MYSQL_NAME', 'mytaxi_db');
-define('MYSQL_USER', 'root');
-define('MYSQL_PASS', '');
 
 // Paramètres de l'entreprise
 define('SITE_NAME', 'MY TAXI');

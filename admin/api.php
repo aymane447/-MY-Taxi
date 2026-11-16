@@ -147,7 +147,7 @@ if ($action === 'save_settings') {
     $email = isset($_POST['email']) ? cleanInput($_POST['email']) : '';
     $notice = isset($_POST['notice']) ? cleanInput($_POST['notice']) : '';
 
-    $stmt = $pdo->prepare("INSERT OR REPLACE INTO settings (key_name, value) VALUES (?, ?)");
+    $stmt = $pdo->prepare("REPLACE INTO settings (key_name, value) VALUES (?, ?)");
     $stmt->execute(['phone_number', $phone]);
     $stmt->execute(['whatsapp_number', $whatsapp]);
     $stmt->execute(['email', $email]);
