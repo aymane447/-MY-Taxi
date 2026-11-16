@@ -14,7 +14,7 @@ define('DB_TYPE', 'mysql');
 // Paramètres Hostpoint (MariaDB 10.11 / MySQL)
 define('MYSQL_HOST', 'ikipebid.mysql.db.internal');
 define('MYSQL_PORT', '3306');
-define('MYSQL_NAME', 'mytaxi0ch9db');
+define('MYSQL_NAME', 'ikipebid_mytaxi0ch9db');
 define('MYSQL_USER', 'mytaxi');
 define('MYSQL_PASS', 'aymane123@@Ass');
 
